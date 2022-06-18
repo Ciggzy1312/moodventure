@@ -1,9 +1,17 @@
 import { useUser } from '@auth0/nextjs-auth0';
+import { useState } from 'react';
+import Modal from './Modal';
 
 const DashBoard = () => {
 
   const { user } = useUser();
   const { email, given_name } = user;
+  const [modalVisibility, setModalVisibility] = useState(false);
+
+
+  const handleEdit = (e) => {
+    setModalVisibility(!modalVisibility);
+  }
 
   return (
     <div className=''>
@@ -17,18 +25,24 @@ const DashBoard = () => {
         </div>
 
         <div className=''>
-          <button className=' text-[#2FCC9D] border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D] hover:text-white'><a href="/api/auth/logout">Logout</a></button>
+        <a href="/api/auth/logout" className='text-[#2FCC9D] hover:text-white'><button className=' border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D]'>Logout</button></a>
         </div>
       </div>
 
-      <div className='px-4 py-6 my-10 text-center bg-gray-100 h-[200px]'>
-        <div className='my-6'>
-          <span className='text-4xl font-semibold'>Welcome {given_name}</span>
-          <p className='text-lg text-slate-600 mt-2 font-semibold'>Tell us about your day</p>
-        </div>
+      {modalVisibility ?
+        <div className="bg-slate-200 text-center">
+          <div className="bg-white w-5/6 m-auto my-10">
+            <Modal modalVisibility={modalVisibility} setModalVisibility={setModalVisibility} />
+          </div>
+        </div> : <div className='px-4 py-10 my-10 text-center bg-gray-100'>
+          <div className='my-6'>
+            <span className='text-4xl font-semibold'>Welcome {given_name}</span>
+            <p className='text-lg text-slate-600 mt-2 font-semibold'>Tell us about your day</p>
+          </div>
 
-        <button className='text-white bg-[#2FCC9D] border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5'>Add mood</button>
-      </div>
+
+          <button className='text-white bg-[#2FCC9D] border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5' onClick={handleEdit}>Add mood</button>
+        </div>}
 
       <div className='px-4 py-6 my-10 text-center'>
         <div className='mb-4'>

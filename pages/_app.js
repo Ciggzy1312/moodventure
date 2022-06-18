@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/globals.css'
+import 'antd/dist/antd.css';
 import { UserProvider } from '@auth0/nextjs-auth0';
 
 export default function App({ Component, pageProps }) {
