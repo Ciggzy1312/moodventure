@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import moment from "moment";
 import { DatePicker, Input } from "antd";
+import axios from 'axios';
 
 const { TextArea } = Input;
 
-const Modal = ({modalVisibility, setModalVisibility}) => {
+const Modal = ({modalVisibility, setModalVisibility, email}) => {
 
     const [date, setDate] = useState(new Date().toISOString().split('T')[0])
     const [notes, setNotes] = useState("")
@@ -34,7 +35,12 @@ const Modal = ({modalVisibility, setModalVisibility}) => {
         },
     ];
 
+    const createMood = async (e)=>{
+        await axios.post("/api/mood/addMood", {email, date, mood, notes})
+    }
+
     const handleEdit = ()=>{
+        createMood()
         setModalVisibility(!modalVisibility)
     }
 

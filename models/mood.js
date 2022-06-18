@@ -15,6 +15,6 @@ const moodSchema = new Schema({
     },
 });
 
-const Mood = models.Mood || model('Post', moodSchema);
+const Mood = models.Mood || model('Mood', moodSchema);
 
 export default Mood;

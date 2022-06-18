@@ -32,7 +32,7 @@ const DashBoard = () => {
       {modalVisibility ?
         <div className="bg-slate-200 text-center">
           <div className="bg-white w-5/6 m-auto my-10">
-            <Modal modalVisibility={modalVisibility} setModalVisibility={setModalVisibility} />
+            <Modal modalVisibility={modalVisibility} setModalVisibility={setModalVisibility} email={email}/>
           </div>
         </div> : <div className='px-4 py-10 my-10 text-center bg-gray-100'>
           <div className='my-6'>
