@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from "moment";
 import { DatePicker, Input } from "antd";
 import axios from 'axios';
@@ -39,10 +39,29 @@ const Modal = ({modalVisibility, setModalVisibility, email}) => {
         await axios.post("/api/mood/addMood", {email, date, mood, notes})
     }
 
+    const getMood = async ()=>{
+        const res = await axios.post("/api/mood/getMood", {email, date});
+        const val = res.data.item;
+  
+        if(val){
+          setMood(val.mood)
+          setNotes(val.note)
+          setEdit(true)
+        } else{
+          setMood(2)
+          setNotes("")
+          setEdit(false)
+        }
+    }
+
     const handleEdit = ()=>{
         createMood()
         setModalVisibility(!modalVisibility)
     }
+
+    useEffect(()=>{
+        getMood();
+    },[date])
 
     return (
         <div className='my-4'>
@@ -51,7 +70,8 @@ const Modal = ({modalVisibility, setModalVisibility, email}) => {
                 <DatePicker
                     defaultValue={moment()}
                     format="DD/MM/YYYY"
-                    onChange={(val) => setDate(val ? val.toISOString().split('T')[0] : val)}
+                    onChange={(val) => {
+                        setDate(val ? val.format("YYYY-MM-DD") : val)}}
                 />
             </div>
 

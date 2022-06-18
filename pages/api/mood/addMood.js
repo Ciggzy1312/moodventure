@@ -1,7 +1,7 @@
 import Mood from "../../../models/mood";
 import connectDB from "../../../utils/connectDB";
 
-export default async function addPost(req, res) {
+export default async function addMood(req, res) {
     try {
         await connectDB();
 
