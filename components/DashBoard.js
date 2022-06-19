@@ -26,7 +26,7 @@ const DashBoard = () => {
         </div>
 
         <div className=''>
-        <a href="/api/auth/logout" className='text-[#2FCC9D] hover:text-white'><button className=' border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D]'>Logout</button></a>
+        <Link href="/api/auth/logout"><button className=' border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D] text-[#2FCC9D] hover:text-white'>Logout</button></Link>
         </div>
       </div>
 

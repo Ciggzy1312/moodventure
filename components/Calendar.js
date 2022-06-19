@@ -68,6 +68,7 @@ const Calendar = ({ items }) => {
 
   useEffect(() => {
     getCalendar(offset)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset])
 
   const getColor = (moodNumber) => {

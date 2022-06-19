@@ -61,6 +61,7 @@ const Modal = ({modalVisibility, setModalVisibility, email}) => {
 
     useEffect(()=>{
         getMood();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[date])
 
     return (

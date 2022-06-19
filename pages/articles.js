@@ -19,7 +19,7 @@ const Articles = ({ data }) => {
                 </div>
 
                 <div className=''>
-                    <a href="/api/auth/logout" className='text-[#2FCC9D] hover:text-white'><button className=' border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D]'>Logout</button></a>
+                    <Link href="/api/auth/logout" className='text-[#2FCC9D] hover:text-white'><button className=' border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5 hover:bg-[#2FCC9D]'>Logout</button></Link>
                 </div>
             </div>
 
@@ -27,8 +27,8 @@ const Articles = ({ data }) => {
 
             <div className='mx-12 my-6'>
                 {data.map((d, i) => (
-                    <a href={d.url} target='_blank'>
-                        <div className='w-5/6 bg-white px-4 py-8 border-2 border-[#2FCC9D] rounded my-4' key={i}>
+                    <a href={d.url} target='_blank' rel="noreferrer" key={i}>
+                        <div className='w-5/6 bg-white px-4 py-8 border-2 border-[#2FCC9D] rounded my-4'>
                         <div className='text-xl font-bold text-slate-700 my-2'>{d.title}</div>
                         <div className='flex border-2 w-28 border-[#2FCC9D] rounded items-center mt-4'>
                             <div className='w-2 h-2 rounded-full bg-[#2FCC9D] mx-2'></div>
