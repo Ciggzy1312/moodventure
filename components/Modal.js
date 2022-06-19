@@ -15,23 +15,23 @@ const Modal = ({modalVisibility, setModalVisibility, email}) => {
     const moodIcons = [
         {
             icon: "🙁",
-            text: "Rough day",
+            text: "Rough Day",
         },
         {
             icon: "😐",
-            text: "Not good",
+            text: "Bad Day",
         },
         {
             icon: "🙂",
-            text: "Not bad",
+            text: "Okayish Day",
         },
         {
-            icon: "😃",
-            text: "Good",
+            icon: "😀",
+            text: "Good Day",
         },
         {
             icon: "😄",
-            text: "Great!",
+            text: "Great! Day",
         },
     ];
 
