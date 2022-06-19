@@ -1,4 +1,5 @@
 import { useUser } from '@auth0/nextjs-auth0';
+import Link from 'next/link';
 import { useState } from 'react';
 import Modal from './Modal';
 
@@ -18,8 +19,8 @@ const DashBoard = () => {
       <div className='flex justify-between py-8 px-4'>
         <div className='self-center  w-1/3'>
           <ul className='flex text-slate-700 justify-between font-semibold text-lg'>
-            <li className='hover:text-[#2FCC9D]'>Home</li>
-            <li className='hover:text-[#2FCC9D]'>Memories</li>
+            <Link href="/"><li className='hover:text-[#2FCC9D]'>Home</li></Link>
+            <Link href="/memories"><li className='hover:text-[#2FCC9D]'>Memories</li></Link>
             <li className='hover:text-[#2FCC9D]'>Articles</li>
           </ul>
         </div>
@@ -50,7 +51,7 @@ const DashBoard = () => {
           <p className='text-lg text-slate-600 mt-2 font-semibold'>Click below</p>
         </div>
 
-        <button className='text-white bg-[#2FCC9D] border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5'>Stats</button>
+        <Link href="/memories"><button className='text-white bg-[#2FCC9D] border-[#2FCC9D] border-2 rounded font-semibold px-4 py-1.5'>Memories</button></Link>
       </div>
     </div>
   )
