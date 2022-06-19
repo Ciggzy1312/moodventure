@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
 import { Skeleton } from "antd";
-import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import {
     Chart as ChartJS,
     CategoryScale,

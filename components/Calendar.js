@@ -103,8 +103,8 @@ const Calendar = ({ items }) => {
         <div className='self-center  w-1/3'>
           <ul className='flex text-slate-700 justify-between font-semibold text-lg'>
             <Link href="/"><li className='hover:text-[#2FCC9D]'>Home</li></Link>
-            <Link href="/memories"><li className='hover:text-[#2FCC9D]'>Memories</li></Link>
-            <li className='hover:text-[#2FCC9D]'>Articles</li>
+            <li className='text-[#2FCC9D]'>Memories</li>
+            <Link href="/articles"><li className='hover:text-[#2FCC9D]'>Articles</li></Link>
           </ul>
         </div>
 

@@ -3,7 +3,7 @@ import { useUser } from '@auth0/nextjs-auth0';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import Stats from '../components/Stats';
 
-const memories = () => {
+const Memories = () => {
 
     const { user } = useUser();
     
@@ -26,4 +26,4 @@ const memories = () => {
 
 export const getServerSideProps = withPageAuthRequired()
 
-export default memories
+export default Memories

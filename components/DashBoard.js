@@ -19,9 +19,9 @@ const DashBoard = () => {
       <div className='flex justify-between py-8 px-4'>
         <div className='self-center  w-1/3'>
           <ul className='flex text-slate-700 justify-between font-semibold text-lg'>
-            <Link href="/"><li className='hover:text-[#2FCC9D]'>Home</li></Link>
+            <li className='text-[#2FCC9D]'>Home</li>
             <Link href="/memories"><li className='hover:text-[#2FCC9D]'>Memories</li></Link>
-            <li className='hover:text-[#2FCC9D]'>Articles</li>
+            <Link href="/articles"><li className='hover:text-[#2FCC9D]'>Articles</li></Link>
           </ul>
         </div>
 
