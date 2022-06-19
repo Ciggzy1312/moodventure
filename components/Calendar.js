@@ -3,6 +3,7 @@ import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import { Skeleton } from "antd";
 import moment from 'moment';
 import Link from 'next/link';
+import Graph from './Graph';
 
 const Calendar = ({ items }) => {
 
@@ -61,8 +62,6 @@ const Calendar = ({ items }) => {
     console.log(newCalendar, offset)
   };
 
-  console.log(items)
-
   const getModalData = (dayNumber) => {
     setDayData(monthlyCalendar[dayNumber].notes);
   }
@@ -71,10 +70,8 @@ const Calendar = ({ items }) => {
     getCalendar(offset)
   }, [offset])
 
-  //console.log(month, year, maxAndMinDates, offset, monthlyCalendar)
-
   const getColor = (moodNumber) => {
-    const colors = ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)"]
+    const colors = ["rgb(237, 69, 72)", "rgb(250, 157, 157)", "rgb(252, 183, 109)", "rgb(135, 250, 158)", "rgb(66, 212, 122)"]
 
     return colors[moodNumber];
   };
@@ -162,7 +159,9 @@ const Calendar = ({ items }) => {
         </div>
       </div>
 
-      <div className='graph'></div>
+      <div className='graph'>
+        <Graph items={items} offset={offset} setOffset={setOffset} />
+      </div>
     </div>
   )
 }
